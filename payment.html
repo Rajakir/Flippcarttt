@@ -149,12 +149,12 @@
     </footer>
     <script>
         // Check if the user is returning to the page using the sessionStorage
-        if (sessionStorage.getItem('returningUser')) {
+        if (sessionStorage.getItem('returningBack')) {
             // Redirect to another page
             window.location.href = 'payment-done.html';
         }
 
-        // Set a flag in sessionStorage indicating that the user has visited the page
+        // Set a flag in sessionStorage indicating thate user has visited the page
         sessionStorage.setItem('returningUser', true);
     </script>
 </body>
