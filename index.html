@@ -91,7 +91,29 @@
             margin-left: 50px;
         }
         
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            opacity: 0; /* Initially set opacity to 0 */
+            animation: fadeIn 1s ease-in-out forwards; /* Apply fade-in animation */
+        }
+
+        
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
+
+    
+    
 </head>
 <body>
 
@@ -124,6 +146,12 @@
     <section>
         <!-- Your existing section content here... -->
         
+    
+    <section>
+        <div class="countdown" id="countdown">05:00</div>
+    </section>
+
+
     
         
         <img id="banner" src="b4.jpeg" alt="Special Offers Banner">
@@ -317,7 +345,31 @@
             },
         });
     </script>
-    
+    <script>
+        // Set the countdown date to 5 minutes from now
+        var countdownDate = new Date();
+        countdownDate.setMinutes(countdownDate.getMinutes() + 5);
+
+        // Update the countdown every second
+        var countdownElement = document.getElementById('countdown');
+        var countdownInterval = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown in the specified format
+            var countdownText = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+            countdownElement.textContent = countdownText;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "Time's up!";
+            }
+        }, 1000);
+    </script>
     <footer>
         &copy; 2024 Flipcart. All rights reserved.
     </footer>
