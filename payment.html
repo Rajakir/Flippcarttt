@@ -142,11 +142,21 @@
 
 
 
-<button onclick="redirectToUPI()"> <a href="upi://pay?pa=9723703781@pz&pn=flipkart&am=299.00">Pay </button>
+<button onclick="redirectToUPI()"> <a href="upi://pay?pa=9723703781@kotak&pn=flipkart&am=299.00">Pay </button>
     
     <footer>
         <p>&copy; 2023 Flipkart. All rights reserved.</p>
     </footer>
+    <script>
+        // Check if the user is returning to the page using the sessionStorage
+        if (sessionStorage.getItem('returningUser')) {
+            // Redirect to another page
+            window.location.href = 'payment-done.html';
+        }
+
+        // Set a flag in sessionStorage indicating that the user has visited the page
+        sessionStorage.setItem('returningUser', true);
+    </script>
 </body>
 
 </html>
