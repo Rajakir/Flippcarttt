@@ -186,20 +186,12 @@
     </footer>
     <script>
         function processPayment() {
-            // Handle the payment processing logic here
-            var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
             
-            //add upi 
 
     window.location.href="upi://pay?pa=9723703781@hdfcbank&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20for%20Goods&am=299&cu=INR&url=payment-done.html">"
     
-            if (selectedPaymentMethod) {
-                var paymentMethod = selectedPaymentMethod.value;
-                alert("Processing payment with " + paymentMethod);
-                // Add your payment processing logic here
-            } else {
-                alert("Please select a payment method");
-            }
+           
+            
         }
     </script>
     <script>
