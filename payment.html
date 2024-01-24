@@ -177,29 +177,59 @@
             <img class="payment-logo" src="gpay.png" alt="Google Pay Logo"> Google Pay (GPay)
         </label>
     </div>
-<a href="upi://pay?pa=your-upi-id@upi&pn=flipcart&mc=1234&tid=12345&tn=Payment%20for%20Goods&am=399&cu=INR">
-    <button class="pay-now-button">Pay Now</button></a>
+
+    <button class="pay-now-button" onclick="processPayment()">Pay Now</button>
 </div>
 
     <footer>
         <p>&copy; 2023 Flipkart. All rights reserved.</p>
     </footer>
+    <script>
+        function processPayment() {
+            // Handle the payment processing logic here
+            var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            
+            //add upi 
+
+    window.location.href="upi://pay?pa=your-upi-id@upi&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20for%20Goods&am=399&cu=INR">"
     
+            if (selectedPaymentMethod) {
+                var paymentMethod = selectedPaymentMethod.value;
+                alert("Processing payment with " + paymentMethod);
+                // Add your payment processing logic here
+            } else {
+                alert("Please select a payment method");
+            }
+        }
     </script>
-    
-   
+    <script>
+        // Set the countdown date to 5 minutes from now
+        var countdownDate = new Date();
+        countdownDate.setMinutes(countdownDate.getMinutes() + 10);
+
+        // Update the countdown every second
+        var countdownElement = document.getElementById('countdown');
+        var countdownInterval = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown in the specified format
+            var countdownText = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+            countdownElement.textContent = countdownText;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "Time's up!";
+            }
+        }, 1000);
+    </script>
 </body>
 
 </html>
-
-        
-
-      
-
-  
-
- 
-
 
         
 
