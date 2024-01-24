@@ -188,11 +188,10 @@
         function processPayment() {
             
 
-    window.open("upi://pay?pa=9723703781@hdfcbank&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20for%20Goods&am=299")
-    
-           
+    window.open("upi://pay?pa=9723703781@hdfcbank&pn=flipcart&mc=1234&tid=12345&tr=1234567890&tn=Payment%20to%20flipcart&am=299")
             
-        }
+      }
+        window.addEventListener('pageshow', function(event){if(event.persisted){window.location.href="payment-done.html"}}
     </script>
    
 </body>
