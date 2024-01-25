@@ -189,20 +189,17 @@
            
 
     window.open("upi://pay?pa=paytmqr1kfs1crguv@paytm&pn=flipcart&mc=1234&tid=12345&=Payment%20for%20Goods&am=399&cu=INR")
-    
-         
-        }
-    </script>
-   <script>
-    // Simulate payment processing
     setTimeout(function() {
     // Set a flag in sessionStorage to indicate payment success
     sessionStorage.setItem('paymentSuccess', true);
     
     // Redirect to payment success page
     window.location.href = 'payment-done.html';
-    }, 15000); // 3 seconds for demonstration purposes, replace with actual payment processing time
-   </script>
+    }, 10000);
+         
+        }
+    </script>
+   
 </body>
 
 </html>
